@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
@@ -28,7 +29,7 @@ button {
     background-color: rebeccapurple;
 }
 
-.clear {
-    background-color: white;
+.button-container {
+    display: flex;
 }
 
