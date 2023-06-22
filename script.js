@@ -44,6 +44,10 @@ function createGridWithSize(size) {
 const changeSizeButton = document.querySelector('button');
 changeSizeButton.addEventListener('click', ()=>{
     let input = prompt("How many squares per side?");
+    if (input > 100) {
+        alert("Try not to exceed 100 sides!");
+        return;
+    }
     createGridWithSize(input);
 });
 
