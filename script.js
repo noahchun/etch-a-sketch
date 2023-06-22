@@ -61,6 +61,12 @@ changeSizeButton.addEventListener('click', ()=>{
     createGridWithSize(input);
 });
 
+const clearButton = document.querySelector('.clear');
+clearButton.addEventListener('click', ()=>{
+    const squares = document.querySelectorAll('.grid-item');
+    squares.forEach(square => square.style.backgroundColor = 'white');
+});
+
 createGridWithSize(16);
 
 

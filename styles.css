@@ -9,6 +9,7 @@ body {
 button {
     margin-right: 50px;
 }
+
 .grid-container {
     display: grid;
     justify-content: center;
@@ -25,5 +26,9 @@ button {
 
 .hovered {
     background-color: rebeccapurple;
+}
+
+.clear {
+    background-color: white;
 }
 
