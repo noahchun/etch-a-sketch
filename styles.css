@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-color: darksalmon;
+    background-color: lightslategrey;
 }
 
 button {
@@ -19,7 +19,8 @@ button {
 }
 
 .grid-item {
-    outline: red solid 1px;
+    outline: black solid 1px;
+    background-color: white;
 }
 
 .hovered {

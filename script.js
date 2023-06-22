@@ -5,7 +5,6 @@ function createGrid() {
         for (let j = 0; j < 16; j++) {
             const square = document.createElement('div');
             square.classList.add('grid-item');
-            square.textContent = "1";
             container.appendChild(square);
         }
     }
@@ -31,7 +30,6 @@ function createGridWithSize(size) {
         for (let j = 0; j < size; j++) {
             const square = document.createElement('div');
             square.classList.add('grid-item');
-            square.textContent = "1";
             container.appendChild(square);
         }
     }
