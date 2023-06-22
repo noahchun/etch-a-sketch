@@ -1,5 +1,13 @@
 const container = document.querySelector(".grid-container");
 
+function randomColor() {
+    let color = [];
+    for (let i = 0; i < 3; i++) {
+      color.push(Math.floor(Math.random() * 256));
+    }
+    return 'rgb(' + color.join(', ') + ')';
+} 
+
 function createGrid() {
     for (let i = 0; i < 16; i++) {
         for (let j = 0; j < 16; j++) {
@@ -9,14 +17,14 @@ function createGrid() {
         }
     }
     const squares = document.querySelectorAll('.grid-item');
-    squares.forEach(square => square.addEventListener('mouseover', squareEntered));
+    squares.forEach(square => square.addEventListener('mouseover', function(){
+        square.style.backgroundColor = randomColor();
+    }));
 }
 
-function squareEntered(e) {
-    this.classList.add('hovered');
-}
-
-createGridWithSize(16);
+// function squareEntered(e) {
+//     this.classList.add('hovered');
+// }
 
 function createGridWithSize(size) {
     document.getElementsByClassName("grid-container")[0].innerHTML = ""; // Clear the grid container
@@ -38,7 +46,9 @@ function createGridWithSize(size) {
         square.style.width = squareSize + 'px'; 
         square.style.height = squareSize + 'px'; 
     });
-    squares.forEach(square => square.addEventListener('mouseover', squareEntered));
+    squares.forEach(square => square.addEventListener('mouseover', function(){
+        square.style.backgroundColor = randomColor();
+    }));
 }
 
 const changeSizeButton = document.querySelector('button');
@@ -50,6 +60,9 @@ changeSizeButton.addEventListener('click', ()=>{
     }
     createGridWithSize(input);
 });
+
+createGridWithSize(16);
+
 
 
 
