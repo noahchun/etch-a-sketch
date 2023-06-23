@@ -22,10 +22,6 @@ function createGrid() {
     }));
 }
 
-// function squareEntered(e) {
-//     this.classList.add('hovered');
-// }
-
 function createGridWithSize(size) {
     document.getElementsByClassName("grid-container")[0].innerHTML = ""; // Clear the grid container
 
@@ -47,8 +43,29 @@ function createGridWithSize(size) {
         square.style.height = squareSize + 'px'; 
     });
     squares.forEach(square => square.addEventListener('mouseover', function(){
-        square.style.backgroundColor = randomColor();
+        square.style.backgroundColor = 'black';
     }));
+
+    const randColor = document.querySelector('.randColor');
+    randColor.addEventListener('click', ()=> {
+        squares.forEach(square => square.addEventListener('mouseover', function(){
+            square.style.backgroundColor = randomColor();
+        }));
+    });
+
+    const defaultColor = document.querySelector('.defaultColor');
+    defaultColor.addEventListener('click', ()=>{
+        squares.forEach(square => square.addEventListener('mouseover', function(){
+            square.style.backgroundColor = 'black';
+        }));
+    });
+
+    const clearButton = document.querySelector('.clear');
+    clearButton.addEventListener('click', ()=>{
+        const squares = document.querySelectorAll('.grid-item');
+        squares.forEach(square => square.style.backgroundColor = 'white');
+    });
+
 }
 
 const changeSizeButton = document.querySelector('button');
@@ -61,11 +78,7 @@ changeSizeButton.addEventListener('click', ()=>{
     createGridWithSize(input);
 });
 
-const clearButton = document.querySelector('.clear');
-clearButton.addEventListener('click', ()=>{
-    const squares = document.querySelectorAll('.grid-item');
-    squares.forEach(square => square.style.backgroundColor = 'white');
-});
+
 
 createGridWithSize(16);
 
