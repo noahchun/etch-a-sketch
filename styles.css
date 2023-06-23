@@ -9,7 +9,13 @@ body {
 
 button {
     margin-right: 50px;
+    border-radius: 25px;
 }
+
+.button:active {
+    background-color: darkgrey;
+    transform: translateY(4px);
+  }
 
 .grid-container {
     display: grid;
